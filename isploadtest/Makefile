@@ -19,7 +19,7 @@ wsdlhelp:
 	org.apache.axis.wsdl.WSDL2Java -help
 wsdl2j:
 	
-	$(JAVAHOME)/bin/java -classpath $(CLASSPATH) \
+	$(JAVAHOME)/bin/java.exe -classpath $(CLASSPATH) \
         org.apache.axis.wsdl.WSDL2Java \
                 -T1.1 \
 		-N$(NS1)/ISP_CongestionService=com.nateng.riits.isp.vds \
