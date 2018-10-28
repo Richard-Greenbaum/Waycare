@@ -1,0 +1,16 @@
+This example test code is using java AXIS 1.1 to connect to
+ISP WebServices. This code tested on specific development enviroments, so 
+you may need to do more then 6 steps mentioned below.
+
+Steps:
+1. Update the wsdl files in folder wsdls --> you should know the real URL to our webservices
+   ( it may be --> http://rtsisp01.riits.net/ISP/services )
+2. Modify the Makefile to your specific environment --> JAVA_HOME, NS1
+3. Modify Utils.java --> your user name , password, and agency
+3. Generate java code from the new wsdl files
+	by type: make wsdl2j
+4. Recompile the test code ISPTest.java
+	by type: make
+5. Run the test
+	by type: make run
+NOTE: For Windows users, i don't have the script to compile the code, but you can run it by run the runme.bat file
