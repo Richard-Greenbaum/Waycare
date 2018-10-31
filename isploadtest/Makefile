@@ -6,12 +6,11 @@ NS1=http://rtsisp01.riits.net/ISP/services
 SPOOLDIR=./classes
 SOURCEDIR=.
 JAVAHOME=/home/ubuntu/workspaces/Waycare/isploadtest/java
-JAVAHOME2 =/snap/core/5662/usr/share/bash-completion/completions/javac
 CLASSPATH="$(LIBS)/axis.jar:$(LIBS)/commons-logging.jar:$(LIBS)/log4j-1.2.8.jar:$(LIBS)/commons-discovery.jar:$(LIBS)/saaj.jar:$(LIBS)/jaxrpc.jar:$(LIBS)/wsdl4j.jar"
 all: clean jars
 
 jars:
-	$(JAVAHOME2)/bin/javac -g -classpath $(CLASSPATH) \
+	$(JAVAHOME)/bin/javac -g -classpath $(CLASSPATH) \
 	-d $(SPOOLDIR)  -sourcepath $(SOURCEDIR) \
 	-deprecation \
         *.java 
