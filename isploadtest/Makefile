@@ -2,15 +2,16 @@
 
 LIBS=axislibs
 WSDL_DIR=./wsdls
-NS1=http://rtsisp01.riits.net/ISP/services/ISP_CongestionService
+NS1=http://rtsisp01.riits.net/ISP/services
 SPOOLDIR=./classes
 SOURCEDIR=.
 JAVAHOME=/home/ubuntu/workspaces/Waycare/isploadtest/java
+JAVAHOME2 =/snap/core/5662/usr/share/bash-completion/completions/javac
 CLASSPATH="$(LIBS)/axis.jar:$(LIBS)/commons-logging.jar:$(LIBS)/log4j-1.2.8.jar:$(LIBS)/commons-discovery.jar:$(LIBS)/saaj.jar:$(LIBS)/jaxrpc.jar:$(LIBS)/wsdl4j.jar"
 all: clean jars
 
 jars:
-	$(JAVAHOME)/bin/javac.exe -g -classpath $(CLASSPATH) \
+	$(JAVAHOME2)/bin/javac -g -classpath $(CLASSPATH) \
 	-d $(SPOOLDIR)  -sourcepath $(SOURCEDIR) \
 	-deprecation \
         *.java 
@@ -19,7 +20,7 @@ wsdlhelp:
 	org.apache.axis.wsdl.WSDL2Java -help
 wsdl2j:
 	
-	$(JAVAHOME)/bin/java.exe -classpath $(CLASSPATH) \
+	$(JAVAHOME)/bin/java -classpath $(CLASSPATH) \
         org.apache.axis.wsdl.WSDL2Java \
                 -T1.1 \
 		-N$(NS1)/ISP_CongestionService=com.nateng.riits.isp.vds \
