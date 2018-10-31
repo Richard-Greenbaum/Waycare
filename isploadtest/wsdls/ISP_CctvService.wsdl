@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://rtsisp01.riits.net/ISP/services/ISP_CctvService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://rtsisp01.riits.net/ISP/services/ISP_CctvService" xmlns:intf="http://rtsisp01.riits.net/ISP/services/ISP_CctvService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <message name="refreshUsersRequest">
+    <part name="usr" type="xsd:string"/>
+    <part name="pwd" type="xsd:string"/>
+    <part name="agency" type="xsd:string"/>
+  </message>
+  <message name="initializeRequest">
+    <part name="agencyName" type="xsd:string"/>
+    <part name="serviceName" type="xsd:string"/>
+    <part name="configFile" type="xsd:string"/>
+  </message>
+  <message name="refreshUsersResponse">
+  </message>
+  <message name="getCctvInfoResponse">
+    <part name="getCctvInfoReturn" type="xsd:string"/>
+  </message>
+  <message name="getCctvInfoRequest">
+    <part name="userName" type="xsd:string"/>
+    <part name="userPass" type="xsd:string"/>
+    <part name="xmlMessageRequest" type="xsd:string"/>
+  </message>
+  <message name="initializeResponse">
+  </message>
+  <portType name="CctvService">
+    <operation name="initialize" parameterOrder="agencyName serviceName configFile">
+      <input message="impl:initializeRequest" name="initializeRequest"/>
+      <output message="impl:initializeResponse" name="initializeResponse"/>
+    </operation>
+    <operation name="getCctvInfo" parameterOrder="userName userPass xmlMessageRequest">
+      <input message="impl:getCctvInfoRequest" name="getCctvInfoRequest"/>
+      <output message="impl:getCctvInfoResponse" name="getCctvInfoResponse"/>
+    </operation>
+    <operation name="refreshUsers" parameterOrder="usr pwd agency">
+      <input message="impl:refreshUsersRequest" name="refreshUsersRequest"/>
+      <output message="impl:refreshUsersResponse" name="refreshUsersResponse"/>
+    </operation>
+  </portType>
+  <binding name="ISP_CctvServiceSoapBinding" type="impl:CctvService">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="initialize">
+      <wsdlsoap:operation soapAction=""/>
+      <input name="initializeRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://external.regional.services.nateng.com" use="encoded"/>
+      </input>
+      <output name="initializeResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://rtsisp01.riits.net/ISP/services/ISP_CctvService" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="getCctvInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <input name="getCctvInfoRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://external.regional.services.nateng.com" use="encoded"/>
+      </input>
+      <output name="getCctvInfoResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://rtsisp01.riits.net/ISP/services/ISP_CctvService" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="refreshUsers">
+      <wsdlsoap:operation soapAction=""/>
+      <input name="refreshUsersRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://services.nateng.com" use="encoded"/>
+      </input>
+      <output name="refreshUsersResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://rtsisp01.riits.net/ISP/services/ISP_CctvService" use="encoded"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CctvServiceService">
+    <port binding="impl:ISP_CctvServiceSoapBinding" name="ISP_CctvService">
+      <wsdlsoap:address location="http://rtsisp01.riits.net/ISP/services/ISP_CctvService"/>
+    </port>
+  </service>
+</definitions>
