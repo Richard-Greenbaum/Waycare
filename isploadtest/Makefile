@@ -5,7 +5,7 @@ WSDL_DIR=./wsdls
 NS1=http://rtsisp01.riits.net/ISP/services
 SPOOLDIR=./classes
 SOURCEDIR=.
-JAVAHOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+JAVAHOME=/Users/richardgreenbaum/desktop/Waycare/isploadtest
 CLASSPATH="$(LIBS)/axis.jar:$(LIBS)/commons-logging.jar:$(LIBS)/log4j-1.2.8.jar:$(LIBS)/commons-discovery.jar:$(LIBS)/saaj.jar:$(LIBS)/jaxrpc.jar:$(LIBS)/wsdl4j.jar"
 all: clean jars
 
