@@ -24,8 +24,8 @@ public class ISP_CongestionServiceSoapBindingStub extends org.apache.axis.client
         oper.addParameter(new javax.xml.namespace.QName("", "serviceName"), new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, org.apache.axis.description.ParameterDesc.IN, false, false);
         oper.addParameter(new javax.xml.namespace.QName("", "configFile"), new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, org.apache.axis.description.ParameterDesc.IN, false, false);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
-        oper.setStyle(org.apache.axis.enum.Style.RPC);
-        oper.setUse(org.apache.axis.enum.Use.ENCODED);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
@@ -36,8 +36,8 @@ public class ISP_CongestionServiceSoapBindingStub extends org.apache.axis.client
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(java.lang.String.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTrafficInfoReturn"));
-        oper.setStyle(org.apache.axis.enum.Style.RPC);
-        oper.setUse(org.apache.axis.enum.Use.ENCODED);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
@@ -46,8 +46,8 @@ public class ISP_CongestionServiceSoapBindingStub extends org.apache.axis.client
         oper.addParameter(new javax.xml.namespace.QName("", "pwd"), new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, org.apache.axis.description.ParameterDesc.IN, false, false);
         oper.addParameter(new javax.xml.namespace.QName("", "agency"), new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, org.apache.axis.description.ParameterDesc.IN, false, false);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
-        oper.setStyle(org.apache.axis.enum.Style.RPC);
-        oper.setUse(org.apache.axis.enum.Use.ENCODED);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[2] = oper;
 
     }
